@@ -95,7 +95,7 @@ public class RxUtils {
      */
     public static void from() {
         Integer[] items = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-        final int[] n = {0};
+        final int[] n = {0};//测试用的
         Observable.from(items).subscribe(new Subscriber<Integer>() {
             @Override
             public void onCompleted() {
