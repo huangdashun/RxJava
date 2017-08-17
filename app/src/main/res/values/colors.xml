@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--自定义日历-->
+    <color name="white_9">#999999</color>
+    <color name="white_c">#CCCCCC</color>
+    <color name="black">#FF000000</color>
+    <color name="green_1">#08CFA7</color>
+    <color name="common_bg">#FFF7F7F7</color>
 </resources>

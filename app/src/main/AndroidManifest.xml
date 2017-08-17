@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".rxandroiddemo.HomeActivity" />
-        <activity android:name=".customview.customdownview.CustomDownViewAct"></activity>
+        <activity android:name=".customview.customdownview.CustomDownViewAct" />
+        <activity android:name=".customview.datapick.DatePickActivity"></activity>
     </application>
 
 </manifest>

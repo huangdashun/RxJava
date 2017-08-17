@@ -8,4 +8,17 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.TextView" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:textViewStyle">@style/textviewstyle</item>
+    </style>
+    <style name="textviewstyle" parent="Widget.AppCompat.AutoCompleteTextView">
+
+    </style>
+
+
+    <style name="DateSelectAnimation">
+        <item name="android:windowEnterAnimation">@anim/date_pick_enter</item>
+        <item name="android:windowExitAnimation">@anim/date_pick_exit</item>
+    </style>
+
 </resources>

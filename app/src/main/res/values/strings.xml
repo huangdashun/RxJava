@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">RxJava</string>
+
+
+    <string name="icon_0" translatable="false">&#xe901;</string>
+    <string name="icon_1" translatable="false">&#xe902;</string>
+    <string name="icon_2" translatable="false">&#xe903;</string>
+    <string name="icon_3" translatable="false">&#xe904;</string>
+    <string name="icon_4" translatable="false">&#xe905;</string>
+    <string name="icon_5" translatable="false">&#xe906;</string>
+    <string name="icon_6" translatable="false">&#xe907;</string>
+    <string name="icon_7" translatable="false">&#xe908;</string>
+    <string name="icon_8" translatable="false">&#xe982;</string>
+    <string name="icon_9" translatable="false">&#xe909;</string>
+    <string name="icon_dot" translatable="false">&#xe90a;</string>
+
+    <string name="icon_page_left" translatable="false">&#xe927;</string>
+    <string name="icon_page_right" translatable="false">&#xe924;</string>
+    <string name="month_sdf">yyyy年 MM月</string>
 </resources>
