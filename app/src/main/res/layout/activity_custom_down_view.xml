@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.bong.rxjava.customview.customdownview.CustomDownViewAct">
+
+    <com.example.bong.rxjava.customview.customdownview.CountDownView
+        android:id="@+id/view1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:cd_animator_time="6"
+        app:cd_animator_time_unit="秒"
+        app:cd_arc_color="@android:color/black"
+        app:cd_arc_width="1dp"
+        app:cd_bg_color="#f00"
+        app:cd_circle_radius="20dp"
+        app:cd_location="bottom"
+        app:cd_retreat_type="back"
+        app:cd_text_color="#000"
+        app:cd_text_size="10dp" />
+
+    <com.example.bong.rxjava.customview.customdownview.CountDownView
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cd_animator_time="6"
+        app:cd_animator_time_unit="秒"
+        app:cd_arc_color="@android:color/black"
+        app:cd_arc_width="1dp"
+        app:cd_bg_color="#f00"
+        app:cd_circle_radius="20dp"
+        app:cd_location="top"
+        app:cd_retreat_type="back"
+        app:cd_text_color="#000"
+        app:cd_text_size="10dp" />
+
+    <com.example.bong.rxjava.customview.customdownview.CountDownView
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cd_animator_time="6"
+        app:cd_animator_time_unit="秒"
+        app:cd_arc_color="@android:color/black"
+        app:cd_arc_width="1dp"
+        app:cd_bg_color="#f00"
+        app:cd_circle_radius="20dp"
+        app:cd_location="left"
+        app:cd_retreat_type="back"
+        app:cd_text_color="#000"
+        app:cd_text_size="10dp" />
+
+    <com.example.bong.rxjava.customview.customdownview.CountDownView
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cd_animator_time="6"
+        app:cd_animator_time_unit="秒"
+        app:cd_arc_color="@android:color/black"
+        app:cd_arc_width="1dp"
+        app:cd_bg_color="#f00"
+        app:cd_circle_radius="20dp"
+        app:cd_location="right"
+        app:cd_retreat_type="back"
+        app:cd_text_color="#000"
+        app:cd_text_size="10dp" />
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始动画" />
+</LinearLayout>
