@@ -17,4 +17,5 @@
     <string name="icon_page_left" translatable="false">&#xe927;</string>
     <string name="icon_page_right" translatable="false">&#xe924;</string>
     <string name="month_sdf">yyyy年 MM月</string>
+    <string name="month_sdf_new">MM月 yyyy</string>
 </resources>

@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -16,13 +17,15 @@ import com.example.bong.rxjava.utils.DisplayUtil;
 import java.util.Calendar;
 import java.util.Date;
 
+import static android.content.ContentValues.TAG;
+
 
 /**
  * @author rqg
  * @date 10/28/15.
  */
 public class CalendarView extends View {
-
+    private static final String TAG = "CalendarView";
     private Paint mWeekPaint, mDividerPaint, mDayPaint, mSelectedPaint;
 
     private int mWeekColor, mDividerColor, mDayColor, mSelectedColor;
@@ -34,11 +37,11 @@ public class CalendarView extends View {
     private int mYear, mMonth;
 
 
-    private float mCellWidth, mCellHeight;
+    private float mCellWidth, mCellHeight;//一行有七个日历点,日历点的宽高
 
     private Date mSelectedDate = new Date(0);
 
-    private String[] mWeekName;
+    private String[] mWeekName;//日--六
 
     private float mOffsetX, mOffsetY;
     private int mToday = 40;
@@ -128,33 +131,33 @@ public class CalendarView extends View {
 
 
     private void init() {
-        mTextSize = (int) DisplayUtil.dp2Px(getContext(), 17);
+        mTextSize = (int) DisplayUtil.dp2Px(getContext(), 17);//文字的大小为17dp
         mWeekName = getResources().getStringArray(R.array.week_name);
 
         mCalendar = Calendar.getInstance();
 
-        mWeekColor = getResources().getColor(R.color.white_9);
-        mDividerColor = getResources().getColor(R.color.white_c);
-        mDayColor = getResources().getColor(R.color.black);
-        mSelectedColor = getResources().getColor(R.color.green_1);
+        mWeekColor = getResources().getColor(R.color.white_9);//画星期的颜色
+        mDividerColor = getResources().getColor(R.color.white_c);//画线的颜色
+        mDayColor = getResources().getColor(R.color.black);//画日期的颜色
+        mSelectedColor = getResources().getColor(R.color.green_1);//画当前查看的日期
 
-
+        //星期画笔
         mWeekPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mWeekPaint.setColor(mWeekColor);
         mWeekPaint.setTextAlign(Paint.Align.CENTER);
         mWeekPaint.setStyle(Paint.Style.FILL);
         mWeekPaint.setTextSize(mTextSize);
-
+        //线的画笔
         mDividerPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mDividerPaint.setColor(mDividerColor);
         mDividerPaint.setStrokeWidth(2);
-
+        //日期的画笔
         mDayPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mDayPaint.setColor(mDayColor);
         mDayPaint.setTextAlign(Paint.Align.CENTER);
         mDayPaint.setStyle(Paint.Style.FILL);
         mDayPaint.setTextSize(mTextSize);
-
+        //当前查看的日期的画笔
         mSelectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mSelectedPaint.setColor(mSelectedColor);
         mSelectedPaint.setStyle(Paint.Style.FILL);
@@ -198,8 +201,12 @@ public class CalendarView extends View {
         float x;
         float y = 2 * mCellHeight + mOffsetY;
 
-        int dc = mCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
-        int week = mCalendar.get(Calendar.DAY_OF_WEEK) - 1;
+        int dc = mCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);//当前月的最大天数
+        int week = mCalendar.get(Calendar.DAY_OF_WEEK) - 1;//星期几
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(mSelectedDate);
+        Log.i(TAG, "选中的day:" + calendar.get(Calendar.DAY_OF_MONTH));
 
         x = week * mCellWidth + mOffsetX;
 
@@ -213,7 +220,11 @@ public class CalendarView extends View {
             //绘制不可选择的天数时设置颜色
             if (i == mToday) {
                 mDayPaint.setColor(Color.GRAY);
+                Log.i(TAG, "mToday:" + mToday);
             }
+//            if (i == calendar.get(Calendar.DAY_OF_MONTH)) {//将选中的颜色设置为白色
+//                mDayPaint.setColor(Color.WHITE);
+//            }
 
             if (week % 7 == 6) {
                 x = mOffsetX;
@@ -249,7 +260,7 @@ public class CalendarView extends View {
         int x = (int) (ex / mCellWidth);
         int y = (int) (ey / mCellHeight);
         int week = mCalendar.get(Calendar.DAY_OF_WEEK) - 1;
-        int maxDay = mCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);
+        int maxDay = mCalendar.getActualMaximum(Calendar.DAY_OF_MONTH);//获取当月的总天数
         maxDay = Math.min(maxDay, mToday);
         int today = x + (y - 1) * 7 - week + 1;
         if (today > 0 && today <= maxDay) {
@@ -273,6 +284,8 @@ public class CalendarView extends View {
     }
 
     public void setDate(int year, int month) {
+        Log.d(TAG, "setDate() called with " + "year = [" + year + "], month = [" + month + "]");
+
         mYear = year;
         mMonth = month;
 
@@ -295,6 +308,7 @@ public class CalendarView extends View {
         mListener = listener;
     }
 
+    //设置选中的日期
     public void setSelectedDate(Date selectedDate) {
         if (selectedDate != null)
             this.mSelectedDate.setTime(selectedDate.getTime());

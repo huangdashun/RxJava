@@ -10,4 +10,6 @@
     <color name="black">#FF000000</color>
     <color name="green_1">#08CFA7</color>
     <color name="common_bg">#FFF7F7F7</color>
+
+    <color name="date_pick_color">#00aea4</color>
 </resources>

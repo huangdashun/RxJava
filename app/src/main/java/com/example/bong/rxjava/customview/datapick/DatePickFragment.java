@@ -42,11 +42,11 @@ import butterknife.ButterKnife;
 public class DatePickFragment extends DialogFragment {
     private static final String TAG = "DatePickFragment";
     @Bind(R.id.date_bar_left)
-    IconTextView mDateBarLeft;
+    IconTextView mDateBarLeft;//上个月
     @Bind(R.id.date_bar_right)
-    IconTextView mDateBarRight;
+    IconTextView mDateBarRight;//下个月
     @Bind(R.id.date_bar_text)
-    TextView mDateBarText;
+    TextView mDateBarText;//日期
     @Bind(R.id.date_bar)
     RelativeLayout mDateBar;
     @Bind(R.id.viewpager)
@@ -66,7 +66,7 @@ public class DatePickFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_data_pick, container, false);
         // TODO: 10/29/15 setBackgroundRes not work ????? why????
-        mMonthSdf = new SimpleDateFormat(getString(R.string.month_sdf), Locale.getDefault());
+        mMonthSdf = new SimpleDateFormat(getString(R.string.month_sdf_new), Locale.getDefault());
 
         ButterKnife.bind(this, view);
         return view;
@@ -79,7 +79,7 @@ public class DatePickFragment extends DialogFragment {
 
 
         mViewpager.setAdapter(new CalendarPagerAdapter());
-        mViewpager.getLayoutParams().height = measureViewPagerHeight(getContext());
+        mViewpager.getLayoutParams().height = measureViewPagerHeight(getContext());//设置viewpager的高度为cardView的高度
         mViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -177,7 +177,12 @@ public class DatePickFragment extends DialogFragment {
         super.onResume();
     }
 
-
+    /**
+     * 测量viewpager的高度
+     *
+     * @param context
+     * @return
+     */
     private int measureViewPagerHeight(Context context) {
         // TODO: 10/28/15 　暂行方案，寻找其他解决方案
         CalendarView calendarView = new CalendarView(context);
