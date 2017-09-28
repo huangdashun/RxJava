@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 
 import com.example.bong.rxjava.customview.customdownview.CustomDownViewAct;
 import com.example.bong.rxjava.customview.datapick.DatePickActivity;
+import com.example.bong.rxjava.customview.view.TouchEventActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -22,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout mActivityMain;
     @Bind(R.id.btn_date_pick)
     Button mBtnDatePick;
+    @Bind(R.id.btn_touch_event)
+    Button mBtnTouchEvent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_countdown_view,R.id.btn_date_pick})
+    @OnClick({R.id.btn_countdown_view, R.id.btn_date_pick, R.id.btn_touch_event})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_countdown_view:
@@ -38,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_date_pick:
                 goActivity(DatePickActivity.class);
+                break;
+            case R.id.btn_touch_event:
+                goActivity(TouchEventActivity.class);
                 break;
             default:
                 break;

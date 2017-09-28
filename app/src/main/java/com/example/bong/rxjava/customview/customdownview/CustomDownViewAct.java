@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.bong.rxjava.R;
+import com.example.bong.rxjava.customview.view.CircleLayout;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,6 +21,8 @@ public class CustomDownViewAct extends AppCompatActivity {
     CountDownView mView3;
     @Bind(R.id.view4)
     CountDownView mView4;
+    @Bind(R.id.circle_layout)
+    CircleLayout mCircleLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +45,11 @@ public class CustomDownViewAct extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "动画结束", Toast.LENGTH_SHORT).show();
             }
         });
-
+        mCircleLayout.setOnCircleLayoutClickListener(new CircleLayout.CircleLayoutClickListener() {
+            @Override
+            public void onCircleLayoutClickListener() {
+                Toast.makeText(getApplicationContext(), "你点击了我", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
 }
