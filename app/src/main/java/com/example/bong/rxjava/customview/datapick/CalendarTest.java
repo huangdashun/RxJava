@@ -18,7 +18,9 @@ public class CalendarTest {
 //        Test6();
 //        Test7();
 //        Test8();
-        Test9();
+//        Test9();
+        System.out.println(formatHourMinSecondDefault(1510718265000l));
+        System.out.println(formatHourMinSecondDefault(1510718265l));
     }
 
     /**
@@ -133,5 +135,12 @@ public class CalendarTest {
         int day = calendar.get(Calendar.DAY_OF_MONTH);//日
         int week = calendar.get(Calendar.DAY_OF_WEEK) - 1;//星期 其实表示一周中的第几天
         System.out.println("现在时间是：" + year + "年" + month + "月" + day + "日，星期" + week);
+    }
+
+    public static String formatHourMinSecondDefault(long lDate) {
+        Date date = new Date(lDate);
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "HH:mm:ss");
+        return dateFormat.format(date);
     }
 }

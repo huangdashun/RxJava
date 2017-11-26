@@ -28,4 +28,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="事件传递" />
+
+    <Button
+        android:id="@+id/btn_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义形状" />
 </LinearLayout>
