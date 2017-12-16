@@ -8,20 +8,20 @@ import android.widget.Toast;
 import com.example.bong.rxjava.R;
 import com.example.bong.rxjava.customview.view.CircleLayout;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class CustomDownViewAct extends AppCompatActivity {
 
-    @Bind(R.id.view1)
+    @BindView(R.id.view1)
     CountDownView mView1;
-    @Bind(R.id.view2)
+    @BindView(R.id.view2)
     CountDownView mView2;
-    @Bind(R.id.view3)
+    @BindView(R.id.view3)
     CountDownView mView3;
-    @Bind(R.id.view4)
+    @BindView(R.id.view4)
     CountDownView mView4;
-    @Bind(R.id.circle_layout)
+    @BindView(R.id.circle_layout)
     CircleLayout mCircleLayout;
 
     @Override

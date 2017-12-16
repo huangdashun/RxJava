@@ -32,7 +32,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -41,17 +41,17 @@ import butterknife.ButterKnife;
  */
 public class DatePickFragment extends DialogFragment {
     private static final String TAG = "DatePickFragment";
-    @Bind(R.id.date_bar_left)
+    @BindView(R.id.date_bar_left)
     IconTextView mDateBarLeft;//上个月
-    @Bind(R.id.date_bar_right)
+    @BindView(R.id.date_bar_right)
     IconTextView mDateBarRight;//下个月
-    @Bind(R.id.date_bar_text)
+    @BindView(R.id.date_bar_text)
     TextView mDateBarText;//日期
-    @Bind(R.id.date_bar)
+    @BindView(R.id.date_bar)
     RelativeLayout mDateBar;
-    @Bind(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager mViewpager;
-    @Bind(R.id.empty)
+    @BindView(R.id.empty)
     View mEmpty;
 
 
@@ -230,7 +230,6 @@ public class DatePickFragment extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     private class CalendarPagerAdapter extends PagerAdapter {

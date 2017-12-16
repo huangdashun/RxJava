@@ -20,7 +20,8 @@
         <activity android:name=".rxandroiddemo.HomeActivity" />
         <activity android:name=".customview.customdownview.CustomDownViewAct" />
         <activity android:name=".customview.datapick.DatePickActivity" />
-        <activity android:name=".customview.view.TouchEventActivity"></activity>
+        <activity android:name=".customview.view.TouchEventActivity" />
+        <activity android:name=".PackActivity"></activity>
     </application>
 
 </manifest>

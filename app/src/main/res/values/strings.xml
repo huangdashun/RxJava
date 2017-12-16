@@ -1,7 +1,4 @@
 <resources>
-    <string name="app_name">RxJava</string>
-
-
     <string name="icon_0" translatable="false">&#xe901;</string>
     <string name="icon_1" translatable="false">&#xe902;</string>
     <string name="icon_2" translatable="false">&#xe903;</string>

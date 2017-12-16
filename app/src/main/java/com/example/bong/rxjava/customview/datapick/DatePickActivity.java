@@ -11,14 +11,14 @@ import com.example.bong.rxjava.R;
 import java.util.Calendar;
 import java.util.Date;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.example.bong.rxjava.customview.datapick.TimeLineFragment.MAX_BONG_DAY_PAGE_NUMBER;
 
 public class DatePickActivity extends AppCompatActivity {
 
-    @Bind(R.id.btn_alter)
+    @BindView(R.id.btn_alter)
     Button mBtnAlter;
     private DatePickFragment mDatePickFragment;
     private static final String TAG = "DatePickActivity";
